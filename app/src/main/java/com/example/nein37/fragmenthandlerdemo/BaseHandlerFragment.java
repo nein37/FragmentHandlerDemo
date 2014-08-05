@@ -10,17 +10,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A placeholder fragment containing a simple view.
- */
 public abstract class BaseHandlerFragment extends Fragment {
 
     public ConcreteTestHandler handler = new ConcreteTestHandler();
 
+    /**
+     * フラグメント操作処理を登録する
+     * @param what 操作内容を判別できるID
+     */
     public void sendMessage(int what) {
         this.sendMessage(what, null);
     }
 
+    /**
+     * フラグメント操作処理を登録する
+     * @param what 操作内容を判別できるID
+     * @param bundle Fragment操作時に使用するbundle
+     */
     public void sendMessage(int what, Bundle bundle) {
         Message message = handler.obtainMessage(what);
         if (bundle != null) {
@@ -30,7 +36,7 @@ public abstract class BaseHandlerFragment extends Fragment {
     }
 
     /**
-     * Messageの内容によって処理を行う
+     * Messageの内容によってフラグメント操作を行う
      * 
      * @param message
      */

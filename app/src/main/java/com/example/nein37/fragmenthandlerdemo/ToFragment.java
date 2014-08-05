@@ -1,8 +1,6 @@
 
 package com.example.nein37.fragmenthandlerdemo;
 
-import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -17,7 +15,7 @@ import android.widget.Toast;
  */
 public class ToFragment extends BaseHandlerFragment {
 
-    public static final String BUNDLE_TOAST_text = "toast_text";
+    public static final String BUNDLE_TOAST_TEXT = "toast_text";
     public static final int WHAT_POP_BACKSTACK = 42;
 
     public ToFragment() {
@@ -50,9 +48,9 @@ public class ToFragment extends BaseHandlerFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        if (getArguments() != null && getArguments().containsKey(BUNDLE_TOAST_text)) {
+        if (getArguments() != null && getArguments().containsKey(BUNDLE_TOAST_TEXT)) {
             // 指定文字列がある場合、Toastを表示
-            Toast.makeText(getActivity(), getArguments().getString(BUNDLE_TOAST_text),
+            Toast.makeText(getActivity(), getArguments().getString(BUNDLE_TOAST_TEXT),
                     Toast.LENGTH_SHORT).show();
         }
 

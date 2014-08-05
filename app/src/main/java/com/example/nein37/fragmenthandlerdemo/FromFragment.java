@@ -15,7 +15,7 @@ import android.widget.Button;
  */
 public class FromFragment extends BaseHandlerFragment {
 
-    public static final int WHAT_REPLACE_DIALOG = 37;
+    public static final int WHAT_REPLACE_FRAGMENT = 37;
 
     public FromFragment() {
     }
@@ -35,8 +35,8 @@ public class FromFragment extends BaseHandlerFragment {
                     public void run() {
                         // このタイミングでFragment操作を行うと落ちる
                         Bundle bundle = new Bundle();
-                        bundle.putString(ToFragment.BUNDLE_TOAST_text,"hogehogehogehoge");
-                        sendMessage(WHAT_REPLACE_DIALOG, bundle);
+                        bundle.putString(ToFragment.BUNDLE_TOAST_TEXT,"hogehogehogehoge");
+                        sendMessage(WHAT_REPLACE_FRAGMENT, bundle);
                     }
                 }, 2000);
             }
@@ -48,7 +48,7 @@ public class FromFragment extends BaseHandlerFragment {
     @Override
     public void processMessage(Message message) {
         switch (message.what) {
-            case WHAT_REPLACE_DIALOG:
+            case WHAT_REPLACE_FRAGMENT:
                 // bundleも取り出す
                 ToFragment fragment = new ToFragment();
                 fragment.setArguments(message.getData());
