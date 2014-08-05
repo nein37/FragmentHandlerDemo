@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FragmentHandlerDemo</string>
+    <string name="replace_button">画面遷移</string>
+    <string name="popbackstack_button">戻る</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
